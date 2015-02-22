@@ -9,7 +9,7 @@ Router.map(function() {
   this.resource('track-list', {
     path: 'track-list/:track_list_id'
   },  function () {
-    this.resource('track');
+    this.resource('track', { path: ':track_id' });
   });
 });
 

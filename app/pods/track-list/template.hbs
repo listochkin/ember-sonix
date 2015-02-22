@@ -2,7 +2,11 @@
 
 <ul>
   {{#each model.tracks as |track| }}
-    <li>{{track.artist}} - {{track.title}}</li>
+    <li>
+      {{#link-to 'track' track.id}}
+        {{track.artist}} - {{track.title}}
+      {{/link-to}}
+    </li>
   {{else}}
     <li>The list is empty :(</li>
   {{/each}}
