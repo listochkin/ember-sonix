@@ -6,7 +6,7 @@ export default Ember.Component.extend({
 
   actions: {
     closeMe () {
-      this.sendAction('onClose')
+      this.sendAction('onClose');
     }
   }
 });

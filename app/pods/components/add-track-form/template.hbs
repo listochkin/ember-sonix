@@ -1,0 +1,11 @@
+<form {{action 'save' on="submit"}}>
+  <p>{{input placeholder="title" required=true value=title}}</p>
+  <p>{{input placeholder="artist" required=true value=artist}}
+    {{#unless artistStartsWithUpperCase}}
+      <span>Respect the Artist!</span>
+    {{/unless}}
+  </p>
+  <p><input value="Add" type="Submit"> </p>
+</form>
+
+{{yield}}
