@@ -1,5 +1,9 @@
 <h2>{{model.title}}</h2>
 
+<p>
+  {{#link-to 'track/new'}}Add a new track{{/link-to}}
+</p>
+
 <ul>
   {{#each model.tracks as |track| }}
     <li>
