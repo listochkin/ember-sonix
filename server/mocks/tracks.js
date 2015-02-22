@@ -14,8 +14,26 @@ module.exports = function(app) {
   var tracksRouter = express.Router();
 
   tracksRouter.get('/', function(req, res) {
+    var trackList = req.query.trackList,
+      page = req.query.page || 1,
+      limit = req.query.limit || 3;
+
+    var tracks = FIXTURES.filter(function (track) {
+      if (!trackList) {
+        return true;
+      } else {
+        return track.trackList == trackList;
+      }
+    });
     res.send({
-      'tracks': FIXTURES
+      'tracks': tracks.filter(function (track, index) {
+        return index >= (page - 1) * limit && index < page * limit;
+      }),
+      meta: {
+        page: page,
+        limit: limit,
+        total: tracks.length
+      }
     });
   });
 
