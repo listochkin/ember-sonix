@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'sonix',
+    podModulePrefix: 'sonix/pods',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
