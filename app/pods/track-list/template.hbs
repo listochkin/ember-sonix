@@ -1,3 +1,11 @@
-Track List
+<h2>{{model.title}}</h2>
+
+<ul>
+  {{#each model.tracks as |track| }}
+    <li>{{track.artist}} - {{track.title}}</li>
+  {{else}}
+    <li>The list is empty :(</li>
+  {{/each}}
+</ul>
 
 {{outlet}}
