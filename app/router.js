@@ -10,6 +10,7 @@ Router.map(function() {
     this.resource('track/new');
     this.resource('track', { path: ':track_id' });
   });
+  this.route('login');
 });
 
 export default Router;

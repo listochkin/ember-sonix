@@ -1,3 +1,13 @@
-<h1 id="title">Welcome to Ember.js</h1>
+<h1 id="title">
+  {{#link-to 'index'}}
+    Welcome to Ember.js
+  {{/link-to}}
+</h1>
+
+{{#if session.isLoggedIn}}
+  <p>{{session.username}}</p>
+{{else}}
+  <p>{{#link-to 'login'}}Login{{/link-to}}</p>
+{{/if}}
 
 {{outlet}}
